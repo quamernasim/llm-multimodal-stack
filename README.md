@@ -32,7 +32,7 @@ sudo apt-get upgrade
 
 sudo apt-get install portaudio19-dev
 
-http://5.178.113.239:8000/docs
+http://ip:8000/docs
 
 ---
 
