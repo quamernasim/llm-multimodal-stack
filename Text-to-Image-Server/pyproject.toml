@@ -1,0 +1,17 @@
+[project]
+name = "text-to-image-server"
+version = "0.1.0"
+description = "Text to Image Server"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.11",
+    "pydantic>=2.10.6",
+    "uvicorn>=0.34.0",
+    "torch>=2.6.0",
+    "diffusers>=0.33.1",
+    "transformers>=4.52.4",
+    "accelerate>=1.7.0",
+    "sentencepiece>=0.2.0",
+    "protobuf>=6.31.1",
+]

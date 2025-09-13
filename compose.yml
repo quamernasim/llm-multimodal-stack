@@ -1,0 +1,115 @@
+services:
+  stt-server:
+    build: ./Speech-to-Text-Server
+    container_name: stt-server
+    # ports:
+    #   - "5000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['4']
+              capabilities: [gpu]
+    networks:
+      - default
+      - ggml
+
+
+  tts-server:
+    build: ./Text-to-Speech-Server
+    container_name: tts-server
+    # ports:
+    #   - "5001:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['4']
+              capabilities: [gpu]
+    env_file:
+      - ./Text-to-Speech-Server/.env
+    networks:
+      - default
+      - ggml
+
+
+  itt-server:
+    build: ./Image-to-Text-Server
+    container_name: itt-server
+    # ports:
+    #   - "5002:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['4']
+              capabilities: [gpu]
+    env_file:
+      - ./Image-to-Text-Server/.env
+    networks:
+      - default
+      - ggml
+
+
+  tti-server:
+    build: ./Text-to-Image-Server
+    container_name: tti-server
+    # ports:
+    #   - "5003:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['4']
+              capabilities: [gpu]
+    env_file:
+      - ./Text-to-Image-Server/.env
+    networks:
+      - default
+      - ggml
+
+
+  itv-server:
+    build: ./Image-to-Video-Server
+    container_name: itv-server
+    # ports:
+    #   - "5004:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['2']
+              capabilities: [gpu]
+    env_file:
+      - ./Image-to-Video-Server/.env
+    networks:
+      - default
+      - ggml
+
+
+networks:
+  default:
+    name: assistant_default
+  ggml:
+    external: true
+    name: ggml_default

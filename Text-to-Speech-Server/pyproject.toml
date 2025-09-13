@@ -1,0 +1,17 @@
+[project]
+name = "text-to-speech-server"
+version = "0.1.0"
+description = "Text to Speech Server"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.11",
+    "numpy<2.0.0",
+    "pydantic>=2.10.6",
+    "soundfile>=0.13.1",
+    "uvicorn>=0.34.0",
+    "transformers>=4.52.4",
+    "snac>=1.2.1",
+    "torch==2.5.1",
+    "vllm==0.7.3"
+]
