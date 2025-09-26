@@ -85,4 +85,4 @@ Text-to-Speech-Server/
 ---
 
 ## 📬 Contact
-For issues or contributions, open a GitHub issue or contact [narendra@machinelearning.one].
+For issues or contributions, open a GitHub issue or contact [quamer23nasim38@gmail.com].
