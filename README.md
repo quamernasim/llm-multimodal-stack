@@ -108,4 +108,4 @@ Assistant/
 
 ## 📬 Contact
 
-For issues or contributions, open a GitHub issue or contact [narendra@machinelearning.one].
+For issues or contributions, open a GitHub issue or contact [quamer23masim38@gmail.com].
